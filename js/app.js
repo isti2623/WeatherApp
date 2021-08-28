@@ -12,7 +12,7 @@ const loadWeather = () => {
 }
 
 const showWeather = temp => {
-
+    console.log(temp);
     const showText = document.getElementById("show-text");
 
     var details = document.createElement('div')
@@ -20,19 +20,9 @@ const showWeather = temp => {
     details.innerHTML = `
     
     <h1 class="name" id="name">${temp.name}</h1>
-  
-    
+    <p class="temp">${temp.weather[0].description}</p>
+ 
     `
-    showText.appendChild(details)
+    showText.appendChild(details);
 
-
-    temp.weather.forEach(element => {
-        var description = document.createElement('div')
-        details.classList.add('card');
-        description.innerHTML = `
-
-        <p class="temp">${element.description}</p>
-        `
-        showText.appendChild(description)
-    });
 }
